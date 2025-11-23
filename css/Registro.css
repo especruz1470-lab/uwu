@@ -1,0 +1,176 @@
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'SprinturaDemo'; 
+  src: url('../Fonts/SprinturaDemo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../Assets/FondoPrincipal.png") no-repeat center center/cover;
+}
+
+.border-wrapper {
+  border: 2px solid #8feb26;
+  border-radius: 12px;
+  padding: 3px;
+  display: inline-block;
+  background: rgba(0,0,0,0);
+}
+
+.main-container {
+  display: flex;
+  width: 800px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+.welcome-box {
+  flex: 1;
+  background: #0D0D0D;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.welcome-main {
+  font-family: 'SprinturaDemo', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.welcome-sub {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+.login-box {
+  flex: 1;
+  background: rgba(13,13,13,0.85);
+  color: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-box h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.login-box label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  background: #1f1f1f;
+  color: #fff;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.login-box input:focus {
+  border: 1px solid #8feb26;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: #8feb26;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-box button:hover {
+  background: #6cc118;
+}
+
+.login-box p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ccc;
+  text-align: center;
+}
+
+.login-box p a {
+  color: #8feb26;
+  text-decoration: none;
+}
+
+.login-box p a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+    width: 90%;
+  }
+  .welcome-box, .login-box {
+    flex: none;
+    width: 100%;
+  }
+  .welcome-sub {
+    max-width: 90%;
+  }
+}
+
+/* Estilos para los mensajes de error/éxito */
+.message-box {
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.message-box.error {
+  background-color: #5c2a2a;
+  color: #ffc8c8;
+}
+
+.message-box.success {
+  background-color: #2a5c3d;
+  color: #c8ffda;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soccer Mix - Recompensas</title>
+  <link rel="stylesheet" href="../css/Recompensas.css">
+</head>
+<body>
+
+  <!-- CABECERA -->
+  <div class="topbar">
+    <div class="user-bar">
+      <img src="../Assets/Profile.png" alt="Usuario" class="user-icon">
+      <div class="user-info">
+        <strong>Cargando...</strong>
+        <div class="estado"><span class="activo"></span> Activo</div>
+      </div>
+      <div class="vertical-menu">⋮
+        <div class="menu-dropdown">
+          <div class="dropdown-item">Ver Perfil</div>
+          <div class="dropdown-item">Cerrar Sesión</div>
+        </div>
+      </div>
+      <!-- Icono de Notificaciones -->
+      <div class="notifications">
+        <div class="notification-icon">
+          <span>🔔</span>
+          <span class="notification-count" style="display: none;">0</span>
+        </div>
+        <div class="notification-dropdown"></div>
+      </div>
+    </div>
+
+     <div class="menu-options">
+      <a href="Principal.html" class="menu-item">Torneo</a>
+      <a href="Tareas.html" class="menu-item">Tareas</a>
+      <a href="Recompensas.html" class="menu-item active">Recompensas</a>
+      <a href="Nivel.html" class="menu-item">Nivel</a>
+    </div>
+  </div>
+
+  <div class="layout">
+
+    <!-- CHATS -->
+    <div class="sidebar">
+      <div class="chat-section" id="chat-list-container">
+        <div class="chat-header">
+          <h2>Chats</h2>
+          <button class="add-btn">+</button>
+          <div class="add-options">
+            <div class="dropdown-item">➕ Crear grupo</div>
+            <div class="dropdown-item">👤 Agregar amigo</div>
+          </div>
+        </div>
+        <!-- La lista de chats se cargará aquí dinámicamente -->
+      </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="content">
+      <!-- Contenedor para el Chat (oculto por defecto) -->
+      <div id="chat-section-main" class="hidden"></div>
+      <div class="recompensas-container" id="recompensas-container">
+        <div class="recompensas-header">
+          <h1 class="recompensas-title">Tienda</h1>
+          <div class="points-display">
+            <span class="points-amount">Cargando...</span>
+          </div>
+        </div>
+        
+        <div class="copas-grid">
+
+          <div class="copa-card" data-copa-id="champions" data-price="25">
+            <div class="copa-image">
+              <img src="../Assets/Copa1.png" alt="Copa Bronce">
+            </div>
+            <div class="copa-info">
+              <h3 class="copa-name">Champions League</h3>
+              <p class="copa-description">La Champions League es un torneo anual de clubes de fútbol organizado por la UEFA</p>
+              <div class="copa-price">25 pts</div>
+              <button class="comprar-btn">Comprar</button>
+            </div>
+          </div>
+
+          <div class="copa-card" data-copa-id="libertadores" data-price="45">
+            <div class="copa-image">
+              <img src="../Assets/Copa2.png" alt="Copa Plata">
+            </div>
+            <div class="copa-info">
+              <h3 class="copa-name">Libertadores</h3>
+              <p class="copa-description">Torneo de clubes de fútbol más importante y prestigioso de América del Sur, organizado anualmente por la CONMEBOL.</p>
+              <div class="copa-price">45 pts</div>
+              <button class="comprar-btn">Comprar</button>
+            </div>
+          </div>
+
+          <div class="copa-card" data-copa-id="europa" data-price="80">
+            <div class="copa-image">
+              <img src="../Assets/Copa3.png" alt="Copa Oro">
+            </div>
+            <div class="copa-info">
+              <h3 class="copa-name">Europa League</h3>
+              <p class="copa-description">Segunda competición de fútbol de clubes más importante de Europa, organizada por la UEFA</p>
+              <div class="copa-price">80 pts</div>
+              <button class="comprar-btn">Comprar</button>
+            </div>
+          </div>
+
+          <div class="copa-card" data-copa-id="asia" data-price="150">
+            <div class="copa-image">
+              <img src="../Assets/Copa6.png" alt="Copa Suprema">
+            </div>
+            <div class="copa-info">
+              <h3 class="copa-name">Asia Cup</h3>
+              <p class="copa-description">Campeonato de fútbol masculino de selecciones nacionales de Asia.</p>
+              <div class="copa-price">150 pts</div>
+              <button class="comprar-btn">Comprar</button>
+            </div>
+          </div>
+
+          <div class="copa-card" data-copa-id="africa" data-price="300">
+            <div class="copa-image">
+              <img src="../Assets/Copa5.png" alt="Copa Diamante">
+            </div>
+            <div class="copa-info">
+              <h3 class="copa-name">Africa Cup of Nations</h3>
+              <p class="copa-description">Principal competencia de fútbol entre selecciones nacionales masculinas en África</p>
+              <div class="copa-price">300 pts</div>
+              <button class="comprar-btn">Comprar</button>
+            </div>
+          </div>
+
+          <div class="copa-card" data-copa-id="worldcup" data-price="1000">
+            <div class="copa-image">
+              <img src="../Assets/Copa4.png" alt="Copa Cristal">
+            </div>
+            <div class="copa-info">
+              <h3 class="copa-name">World Cup</h3>
+              <p class="copa-description">La Copa Mundial de la FIFA, o Mundial, es el torneo internacional de fútbol masculino más importante del mundo, organizado por la FIFA cada cuatro años.</p>
+              <div class="copa-price">1000 pts</div>
+              <button class="comprar-btn">Comprar</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../js/AgoraRTC_N-4.24.0.js"></script>
+  <script src="../js/video-call.js"></script>
+  <script src="../js/encryption.js"></script>
+  <script src="../js/notifications.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/chat.js"></script>
+  <script src="../js/recompensas.js"></script>
+</body>
+</html>

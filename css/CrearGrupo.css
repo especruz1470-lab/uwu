@@ -1,0 +1,629 @@
+:root {
+  --verde: #1DB954;
+  --negro: #1f1f1f;
+  --blanco: #ffffff;
+  --gris: #0D0D0D;
+  --hover-bg: #333;
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000;
+  color: var(--blanco);
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+/*  CABECERA  */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--negro);
+  padding: 12px 20px;
+  border-bottom: 2px solid var(--verde);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.user-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--verde);
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.user-icon:hover {
+  transform: scale(1.05);
+}
+
+.user-info strong {
+  display: block;
+  font-size: 14px;
+}
+
+.estado {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  opacity: 0.8;
+}
+
+.activo {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--verde);
+  box-shadow: 0 0 6px var(--verde);
+}
+
+.vertical-menu {
+  cursor: pointer;
+  padding: 8px;
+  position: relative;
+  font-size: 20px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  user-select: none;
+}
+
+.vertical-menu:hover {
+  background: var(--hover-bg);
+}
+
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #222;
+  border: 1px solid var(--verde);
+  border-radius: var(--border-radius);
+  min-width: 140px;
+  z-index: 1001;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+.menu-dropdown.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 14px;
+}
+
+.dropdown-item:hover {
+  background: var(--hover-bg);
+  color: var(--verde);
+}
+
+.menu-options {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.menu-item {
+  color: var(--blanco);
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.menu-item:hover {
+  color: var(--verde);
+  background: rgba(29, 185, 84, 0.1);
+}
+
+.layout {
+  display: flex;
+  height: calc(100vh - 70px);
+}
+
+/* CHATS */
+.sidebar {
+  width: 280px;
+  background: #111;
+  border-right: 2px solid var(--verde);
+  padding: 16px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.chat-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.add-btn {
+  background: var(--verde);
+  color: var(--negro);
+  padding: 8px 12px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: var(--transition);
+  border: none;
+  position: relative;
+}
+
+.add-btn:hover {
+  background: #22c55e;
+  transform: scale(1.05);
+}
+
+.add-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #222;
+  border: 1px solid var(--verde);
+  border-radius: var(--border-radius);
+  min-width: 160px;
+  z-index: 1001;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.add-options.show {
+  display: block;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  margin-bottom: 4px;
+  transition: var(--transition);
+}
+
+.chat-item:hover {
+  background: #222;
+  transform: translateX(4px);
+}
+
+.chat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--verde);
+  object-fit: cover;
+}
+
+.chat-list-header {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #888;
+  margin: 20px 0 10px 12px;
+}
+
+/* CONTENIDO */
+.content {
+  flex: 1;
+  padding: 20px; 
+  overflow-y: auto;
+  position: relative;
+  background-color: #000;
+}
+
+.crear-grupo-container {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.crear-grupo-container h2 {
+  font-size: 28px;
+  color: var(--verde);
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.search-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  background: rgba(0,0,0,0.8);
+  border: 2px solid var(--verde);
+  border-radius: var(--border-radius);
+  padding: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.search-input {
+  flex: 1;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: var(--border-radius);
+  padding: 12px 16px;
+  color: var(--blanco);
+  font-size: 14px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--verde);
+}
+
+.search-btn {
+  background: var(--verde);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 12px 16px;
+  color: var(--negro);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 16px;
+}
+
+.search-btn:hover {
+  background: #22c55e;
+  transform: scale(1.05);
+}
+
+.amigos-section {
+  background: rgba(0,0,0,0.8);
+  border: 2px solid var(--verde);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.amigos-section h3 {
+  color: var(--verde);
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-style: italic;
+}
+
+.amigos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.amigo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.amigo-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
+}
+
+.amigo-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.amigo-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--verde);
+  object-fit: cover;
+}
+
+.amigo-name {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.amigo-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--verde);
+  cursor: pointer;
+}
+
+.grupo-form {
+  background: rgba(0,0,0,0.8);
+  border: 2px solid var(--verde);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.grupo-name-input {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: var(--border-radius);
+  padding: 12px 16px;
+  color: var(--blanco);
+  font-size: 16px;
+}
+
+.grupo-name-input:focus {
+  outline: none;
+  border-color: var(--verde);
+}
+
+.crear-btn {
+  background: var(--verde);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 12px 24px;
+  color: var(--negro);
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.group-details {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  background: rgba(0,0,0,0.8);
+  border: 2px solid var(--verde);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.group-image-label {
+  position: relative;
+  cursor: pointer;
+}
+
+#group-image-preview {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid var(--verde);
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.group-image-label span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 24px;
+}
+
+.crear-btn:hover {
+  background: #22c55e;
+  transform: scale(1.02);
+}
+
+/* Fondo  */
+.content::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 280px;  
+  right: 0;
+  bottom: 0;
+  width: calc(100vw - 280px); 
+  height: 100vh;
+  background-image: url("../Assets/SoccerMixFondo.png");
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center;
+  z-index: 0;
+  opacity: 0.10; 
+  pointer-events: none;
+}
+
+
+.content::-webkit-scrollbar,
+.sidebar::-webkit-scrollbar,
+.amigos-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content::-webkit-scrollbar-track,
+.sidebar::-webkit-scrollbar-track,
+.amigos-list::-webkit-scrollbar-track {
+  background: #111;
+  border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-thumb,
+.sidebar::-webkit-scrollbar-thumb,
+.amigos-list::-webkit-scrollbar-thumb {
+  background: var(--verde);
+  border-radius: 4px;
+}
+
+/* --- Estilos para el Sistema de Notificaciones --- */
+
+/* Contenedor principal para el icono y el dropdown */
+.notifications {
+  position: relative; /* Clave para que el dropdown se posicione correctamente */
+  display: flex;
+  align-items: center;
+  margin-left: 15px; /* Espacio para separarlo del menú de usuario */
+}
+
+/* El icono de la campana */
+.notification-icon {
+  position: relative;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer; /* Hace que parezca un botón */
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.notification-icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* El círculo rojo con el número de notificaciones */
+.notification-count {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+  min-width: 10px;
+  text-align: center;
+  line-height: 1;
+  box-shadow: 0 0 0 2px #282828; /* Borde para que destaque sobre el fondo */
+}
+
+/* El menú desplegable (dropdown) */
+.notification-dropdown {
+  display: none; /* OCULTO POR DEFECTO. Esta es la parte más importante. */
+  position: absolute; /* Se posiciona flotante, relativo al contenedor .notifications */
+  top: 120%; /* Un poco por debajo del icono */
+  left: 0;
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  min-width: 300px;
+  max-width: 350px;
+  z-index: 1001; /* Asegura que esté por encima de otros elementos */
+  padding: 8px 0;
+}
+
+/* Cuando el JS añade la clase .show, el dropdown se hace visible */
+.notification-dropdown.show {
+  display: block;
+}
+
+/* Estilo para cada item dentro del dropdown */
+.notification-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid #444;
+  color: #eee;
+  font-size: 14px;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-item p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.notification-item strong {
+  color: #1DB954; /* Color de acento para el nombre de usuario */
+}
+
+/* Contenedor para los botones de Aceptar/Rechazar */
+.notification-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.notification-actions button {
+  flex-grow: 1; /* Para que ambos botones ocupen el mismo espacio */
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.notification-actions .btn-accept {
+  background-color: #1DB954;
+  color: white;
+}
+
+.notification-actions .btn-accept:hover {
+  background-color: #1ed760;
+}
+
+.notification-actions .btn-decline {
+  background-color: #555;
+  color: #ddd;
+}
+
+.notification-actions .btn-decline:hover {
+  background-color: #666;
+}
+
+.content:has(.chat-panel) .crear-grupo-container {
+  display: none;
+}
+
+/* --- Estilos para el Interruptor de Cifrado --- */
+.encrypt-switch-container {
+  display: flex;
+}
+
+.chat-name-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el nombre y la insignia */
+  flex-grow: 1;
+}
+
+.rank-badge-sidebar {
+  width: 20px; /* Ancho de la insignia */
+  height: 20px; /* Alto de la insignia */
+  object-fit: contain;
+  margin-left: auto; /* Empuja la insignia a la derecha */
+}

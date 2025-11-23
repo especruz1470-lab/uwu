@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soccer Mix - Perfil</title>
+  <link rel="stylesheet" href="../css/Perfil.css">
+</head>
+<body>
+
+  <!-- CABECERA -->
+  <div class="topbar">
+    <div class="user-bar">
+      <img src="../Assets/MessiLover.jpg" alt="Usuario" class="user-icon">
+      <div class="user-info">
+        <strong>Cargando...</strong>
+        <div class="estado"><span class="activo"></span> Activo</div>
+      </div>
+      <div class="vertical-menu">⋮
+        <div class="menu-dropdown">
+          <div class="dropdown-item">Ver Perfil</div>
+          <div class="dropdown-item">Cerrar Sesión</div>
+        </div>
+      </div>
+      <!-- Icono de Notificaciones -->
+      <div class="notifications">
+        <div class="notification-icon">
+          <span>🔔</span>
+          <span class="notification-count" style="display: none;">0</span>
+        </div>
+        <div class="notification-dropdown"></div>
+      </div>
+    </div>
+
+    <div class="menu-options">
+      <a href="Principal.html" class="menu-item">Torneo</a>
+      <a href="Tareas.html" class="menu-item">Tareas</a>
+      <a href="Recompensas.html" class="menu-item">Recompensas</a>
+      <a href="Nivel.html" class="menu-item">Nivel</a>
+    </div>
+  </div>
+
+  <div class="layout">
+    <!-- CHATS -->
+    <div class="sidebar">
+      <div class="chat-section" id="chat-list-container">
+        <div class="chat-header">
+          <h2>Chats</h2>
+          <button class="add-btn">+</button>
+          <div class="add-options">
+            <div class="dropdown-item">➕ Crear grupo</div>
+            <div class="dropdown-item">👤 Agregar amigo</div>
+          </div>
+        </div>
+        <!-- La lista de chats se cargará aquí dinámicamente -->
+      </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="content">
+      <!-- Contenedor para el Chat (oculto por defecto) -->
+      <div id="chat-section-main" class="hidden"></div>
+      <!-- Contenido principal de la página -->
+      <div id="profile-section">
+
+        <!-- Este contenido será reemplazado por JavaScript -->
+        <div class="loading">
+          <div class="soccer-ball"></div>
+          <p>Cargando perfil...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input oculto para la subida de imagen -->
+  <input type="file" id="imageInput" accept="image/*" style="display: none;">
+  <script src="../js/notifications.js"></script>
+  <script src="../js/chat.js"></script>
+    <script src="../js/encryption.js"></script>
+  <script src="../js/video-call.js"></script>
+  <script src="../js/perfil.js"></script>
+
+</body>
+</html>

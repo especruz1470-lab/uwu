@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soccer Mix - Crear Grupo</title>
+  <link rel="stylesheet" href="../css/CrearGrupo.css">
+</head>
+<body>
+
+  <!-- CABECERA -->
+  <div class="topbar">
+    <div class="user-bar">
+      <img src="../Assets/MessiLover.jpg" alt="Usuario" class="user-icon">
+      <div class="user-info">
+        <strong>Cargando...</strong>
+        <div class="estado"><span class="activo"></span> Activo</div>
+      </div>
+      <div class="vertical-menu">⋮
+        <div class="menu-dropdown">
+          <div class="dropdown-item">Ver Perfil</div>
+          <div class="dropdown-item">Cerrar Sesión</div>
+        </div>
+      </div>
+      <!-- Icono de Notificaciones -->
+      <div class="notifications">
+        <div class="notification-icon">
+          <span>🔔</span>
+          <span class="notification-count" style="display: none;">0</span>
+        </div>
+        <div class="notification-dropdown"></div>
+      </div>
+    </div>
+
+     <div class="menu-options">
+      <a href="Principal.html" class="menu-item">Torneo</a>
+      <a href="Tareas.html" class="menu-item">Tareas</a>
+      <a href="Recompensas.html" class="menu-item">Recompensas</a>
+      <a href="Nivel.html" class="menu-item">Nivel</a>
+    </div>
+  </div>
+
+  <div class="layout">
+    <!-- CHATS -->
+    <div class="sidebar">
+      <div class="chat-section" id="chat-list-container">
+        <div class="chat-header">
+          <h2>Chats</h2>
+          <button class="add-btn">+</button>
+          <div class="add-options">
+            <div class="dropdown-item">➕ Crear grupo</div>
+            <div class="dropdown-item">👤 Agregar amigo</div>
+          </div>
+        </div>
+        <!-- La lista de chats se cargará aquí dinámicamente -->
+      </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="content">
+      <!-- Contenedor para el Chat (oculto por defecto) -->
+      <div id="chat-section-main" class="hidden"></div>
+      <!-- Contenido principal de la página -->
+      <div class="crear-grupo-container" id="crear-grupo-container">
+        <h2>Crear Nuevo Grupo</h2>
+        <form id="create-group-form">
+          <div class="group-details">
+            <label for="group-image-input" class="group-image-label">
+              <img src="../Assets/Profile.png" alt="Imagen del Grupo" id="group-image-preview">
+              <span>📷</span>
+            </label>
+            <input type="file" id="group-image-input" accept="image/*" style="display: none;">
+            <input type="text" id="grupo-name-input" class="grupo-name-input" placeholder="Nombre del grupo..." required>
+          </div>
+
+          <div class="amigos-section">
+            <h3>Selecciona integrantes (mínimo 2)</h3>
+            <div class="search-bar">
+              <input type="text" id="search-friends-input" class="search-input" placeholder="Buscar amigos..." />
+            </div>
+            <div id="amigos-list" class="amigos-list">
+              <!-- La lista de amigos se cargará aquí dinámicamente -->
+              <p>Cargando amigos...</p>
+            </div>
+          </div>
+
+          <div class="grupo-form">
+            <button type="submit" class="crear-btn">Crear grupo</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../js/notifications.js"></script>
+  <script src="../js/encryption.js"></script>
+  <script src="../js/chat.js"></script>
+  <script src="../js/video-call.js"></script>
+  <script src="../js/crearGrupo.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const friendsListContainer = document.getElementById('amigos-list');
+      const form = document.getElementById('create-group-form');
+      const groupNameInput = document.getElementById('grupo-name-input');
+      const groupImageInput = document.getElementById('group-image-input');
+      const groupImagePreview = document.getElementById('group-image-preview');
+      const searchInput = document.getElementById('search-friends-input');
+
+      // Cargar amigos
+      const loadFriends = async () => {
+        try {
+          const response = await fetch('../php/get_friends.php');
+          const data = await response.json();
+          friendsListContainer.innerHTML = ''; // Limpiar
+
+          if (data.success && data.users.length > 0) {
+            data.users.forEach(user => {
+              const friendItem = document.createElement('div');
+              friendItem.className = 'amigo-item';
+              friendItem.innerHTML = `
+                <div class="amigo-info">
+                  <img src="${user.fotoPerfil ? '../' + user.fotoPerfil : '../Assets/Profile.png'}" alt="Usuario" class="amigo-avatar">
+                  <span class="amigo-name">${user.nomUsuario}</span>
+                </div>
+                <input type="checkbox" class="amigo-checkbox" name="members[]" value="${user.idUsuario}">
+              `;
+              friendsListContainer.appendChild(friendItem);
+            });
+          } else {
+            friendsListContainer.innerHTML = '<p>No tienes amigos para agregar a un grupo.</p>';
+          }
+        } catch (error) {
+          console.error('Error al cargar amigos:', error);
+          friendsListContainer.innerHTML = '<p>Error al cargar la lista de amigos.</p>';
+        }
+      };
+
+      // Previsualizar imagen de grupo
+      groupImageInput.addEventListener('change', () => {
+        const file = groupImageInput.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            groupImagePreview.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      // Filtrar amigos
+      searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        document.querySelectorAll('.amigo-item').forEach(item => {
+          const name = item.querySelector('.amigo-name').textContent.toLowerCase();
+          item.style.display = name.includes(searchTerm) ? '' : 'none';
+        });
+      });
+
+      // Enviar formulario
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const selectedMembers = Array.from(document.querySelectorAll('.amigo-checkbox:checked')).map(cb => cb.value);
+        
+        if (groupNameInput.value.trim() === '') {
+          alert('Por favor, dale un nombre al grupo.');
+          return;
+        }
+
+        if (selectedMembers.length < 2) {
+          alert('Debes seleccionar al menos 2 amigos para formar un grupo.');
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append('group_name', groupNameInput.value.trim());
+        selectedMembers.forEach(memberId => {
+          formData.append('members[]', memberId);
+        });
+        if (groupImageInput.files[0]) {
+          formData.append('group_image', groupImageInput.files[0]);
+        }
+
+        try {
+          const response = await fetch('../php/create_group.php', {
+            method: 'POST',
+            body: formData
+          });
+          const result = await response.json();
+          alert(result.message);
+          if (result.success) {
+            window.close(); // Cierra la pestaña/ventana de creación de grupo
+          }
+        } catch (error) {
+          console.error('Error al crear el grupo:', error);
+          alert('Error de conexión al crear el grupo.');
+        }
+      });
+
+      loadFriends();
+    });
+  </script>
+</body>
+</html>

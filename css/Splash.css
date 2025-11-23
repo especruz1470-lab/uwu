@@ -1,0 +1,108 @@
+:root {
+  --verde: #1DB954;
+  --negro: #1f1f1f;
+  --blanco: #ffffff;
+  --gris: #0D0D0D;
+}
+
+body {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  background: var(--gris);
+  color: var(--blanco);
+  height: 100vh;
+  overflow: hidden;
+}
+
+#splash {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* Fondo */
+#splash .bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+@font-face {
+  font-family: 'SprinturaDemo'; 
+  src: url('Fonts/SprinturaDemo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Logos ocultos al inicio */
+#splash .logo,
+#splash .logo-background {
+  opacity: 0;          
+  animation-fill-mode: forwards; 
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }  
+}
+@keyframes fadeInShadow {
+  to { opacity: 0.6; }  
+}
+
+/* Logo principal */
+#splash .logo {
+  position: relative;
+  z-index: 5;   
+  font-family: 'SprinturaDemo';
+  font-size: 150px;
+  font-weight: bold;
+  color: var(--blanco);
+  text-align: center;
+  animation: fadeIn 1s forwards;
+  animation-delay: 4s; 
+}
+
+/* Logo Sombra */
+#splash .logo-background {
+  position: absolute;
+  top: 50%;  
+  left: 50%; 
+  transform: translate(-50%, -50%) translate(90px, 90px); 
+  font-family: 'SprinturaDemo';
+  font-size: 150px;
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 0.5px var(--blanco); 
+  z-index: 4; 
+  text-align: center;
+  animation: fadeInShadow 1s forwards;
+  animation-delay: 4s; 
+}
+
+/* Balón */
+#splash .ball {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%) scale(5); 
+  width: 850px;
+  z-index: 3;  
+  animation: shrinkBall 4s forwards; 
+}
+
+/* Animación balón */
+@keyframes shrinkBall {
+  0%   { transform: translate(-50%, -50%) scale(5); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}

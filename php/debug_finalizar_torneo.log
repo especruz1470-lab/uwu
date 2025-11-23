@@ -1,0 +1,160 @@
+[2025-11-06 06:33:17] --- Nueva Solicitud ---
+[2025-11-06 06:33:17] Datos recibidos: {"id_torneo":"26"}
+[2025-11-06 06:33:17] Conexión a la base de datos exitosa.
+[2025-11-06 06:33:17] Transacción iniciada.
+[2025-11-06 06:33:17] Llamando a sp_finalizar_torneo_get_datos con id_torneo: 26
+[2025-11-06 06:33:17] Resultado de sp_finalizar_torneo_get_datos: {"equipo_a_id":2,"equipo_b_id":4,"puntos_premio":11}
+[2025-11-06 06:33:17] Llamando a sp_finalizar_torneo_update con ganador_id: 2, goles_a: 3, goles_b: 2
+[2025-11-06 06:33:17] !!! ERROR CAPTURADO !!!
+Mensaje: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while there are pending result sets. Consider unsetting the previous PDOStatement or calling PDOStatement::closeCursor()
+Traza: #0 C:\xampp\htdocs\SoccerMix\php\finalizar_torneo.php(69): PDO->prepare('CALL sp_finaliz...')
+#1 {main}
+[2025-11-06 06:33:29] --- Nueva Solicitud ---
+[2025-11-06 06:33:29] Datos recibidos: {"id_torneo":26}
+[2025-11-06 06:33:29] Conexión a la base de datos exitosa.
+[2025-11-06 06:33:29] Transacción iniciada.
+[2025-11-06 06:33:29] Llamando a sp_finalizar_torneo_get_datos con id_torneo: 26
+[2025-11-06 06:33:29] Resultado de sp_finalizar_torneo_get_datos: {"equipo_a_id":2,"equipo_b_id":4,"puntos_premio":11}
+[2025-11-06 06:33:29] Llamando a sp_finalizar_torneo_update con ganador_id: 2, goles_a: 2, goles_b: 1
+[2025-11-06 06:33:29] !!! ERROR CAPTURADO !!!
+Mensaje: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while there are pending result sets. Consider unsetting the previous PDOStatement or calling PDOStatement::closeCursor()
+Traza: #0 C:\xampp\htdocs\SoccerMix\php\finalizar_torneo.php(69): PDO->prepare('CALL sp_finaliz...')
+#1 {main}
+[2025-11-06 06:34:22] --- Nueva Solicitud ---
+[2025-11-06 06:34:22] Datos recibidos: {"id_torneo":"29"}
+[2025-11-06 06:34:22] Conexión a la base de datos exitosa.
+[2025-11-06 06:34:22] Transacción iniciada.
+[2025-11-06 06:34:22] Llamando a sp_finalizar_torneo_get_datos con id_torneo: 29
+[2025-11-06 06:34:22] Resultado de sp_finalizar_torneo_get_datos: {"equipo_a_id":5,"equipo_b_id":2,"puntos_premio":7}
+[2025-11-06 06:34:22] Llamando a sp_finalizar_torneo_update con ganador_id: 2, goles_a: 1, goles_b: 2
+[2025-11-06 06:34:22] !!! ERROR CAPTURADO !!!
+Mensaje: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while there are pending result sets. Consider unsetting the previous PDOStatement or calling PDOStatement::closeCursor()
+Traza: #0 C:\xampp\htdocs\SoccerMix\php\finalizar_torneo.php(69): PDO->prepare('CALL sp_finaliz...')
+#1 {main}
+[2025-11-06 06:34:30] --- Nueva Solicitud ---
+[2025-11-06 06:34:30] Datos recibidos: {"id_torneo":29}
+[2025-11-06 06:34:30] Conexión a la base de datos exitosa.
+[2025-11-06 06:34:30] Transacción iniciada.
+[2025-11-06 06:34:30] Llamando a sp_finalizar_torneo_get_datos con id_torneo: 29
+[2025-11-06 06:34:30] Resultado de sp_finalizar_torneo_get_datos: {"equipo_a_id":5,"equipo_b_id":2,"puntos_premio":7}
+[2025-11-06 06:34:30] Llamando a sp_finalizar_torneo_update con ganador_id: 5, goles_a: 2, goles_b: 1
+[2025-11-06 06:34:30] !!! ERROR CAPTURADO !!!
+Mensaje: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while there are pending result sets. Consider unsetting the previous PDOStatement or calling PDOStatement::closeCursor()
+Traza: #0 C:\xampp\htdocs\SoccerMix\php\finalizar_torneo.php(69): PDO->prepare('CALL sp_finaliz...')
+#1 {main}
+[2025-11-06 06:37:30] --- Nueva Solicitud ---
+[2025-11-06 06:37:30] Datos recibidos: {"id_torneo":32}
+[2025-11-06 06:37:30] Conexión a la base de datos exitosa.
+[2025-11-06 06:37:30] Transacción iniciada.
+[2025-11-06 06:37:30] Llamando a sp_finalizar_torneo_get_datos con id_torneo: 32
+[2025-11-06 06:37:30] Resultado de sp_finalizar_torneo_get_datos: {"equipo_a_id":3,"equipo_b_id":7,"puntos_premio":14}
+[2025-11-06 06:37:30] Llamando a sp_finalizar_torneo_update con ganador_id: 3, goles_a: 5, goles_b: 0
+[2025-11-06 06:37:30] Llamando a sp_finalizar_torneo_get_ganadores con ganador_id: 3
+[2025-11-06 06:37:30] Usuarios ganadores encontrados: [5]
+[2025-11-06 06:37:30] Asignando 14 puntos a los ganadores.
+[2025-11-06 06:37:30] Asignando puntos al usuario: 5
+[2025-11-06 06:37:30] Transacción completada (commit).
+[2025-11-06 06:37:30] Respuesta enviada: {"success":true,"ganador_id":3,"puntos_ganados":"14","usuarios_ganadores":[5],"goles_a":5,"goles_b":0}
+[2025-11-06 06:45:10] --- Nueva Solicitud ---
+[2025-11-06 06:45:10] Datos recibidos: {"id_torneo":"33"}
+[2025-11-06 06:45:10] Conexión a la base de datos exitosa.
+[2025-11-06 06:45:10] Transacción iniciada.
+[2025-11-06 06:45:10] Llamando a sp_finalizar_torneo_get_datos con id_torneo: 33
+[2025-11-06 06:45:10] Resultado de sp_finalizar_torneo_get_datos: {"equipo_a_id":5,"equipo_b_id":2,"puntos_premio":14}
+[2025-11-06 06:45:10] Llamando a sp_finalizar_torneo_update con ganador_id: 2, goles_a: 0, goles_b: 5
+[2025-11-06 06:45:10] Llamando a sp_finalizar_torneo_get_ganadores con ganador_id: 2
+[2025-11-06 06:45:10] Usuarios ganadores encontrados: [8]
+[2025-11-06 06:45:10] Asignando 14 puntos a los ganadores.
+[2025-11-06 06:45:10] Asignando puntos al usuario: 8
+[2025-11-06 06:45:11] Transacción completada (commit).
+[2025-11-06 06:45:11] Respuesta enviada: {"success":true,"ganador_id":2,"puntos_ganados":"14","usuarios_ganadores":[8],"goles_a":0,"goles_b":5}
+[2025-11-18 04:34:42] --- Nueva Solicitud ---
+[2025-11-18 04:34:42] Datos recibidos: {"id_torneo":"34"}
+[2025-11-18 04:34:42] Conexión a la base de datos exitosa.
+[2025-11-18 04:34:42] Transacción iniciada.
+[2025-11-18 04:34:42] Llamando a sp_finalizar_torneo_get_datos con id_torneo: 34
+[2025-11-18 04:34:42] Resultado de sp_finalizar_torneo_get_datos: {"equipo_a_id":6,"equipo_b_id":1,"puntos_premio":5}
+[2025-11-18 04:34:42] Llamando a sp_finalizar_torneo_update con ganador_id: 1, goles_a: 4, goles_b: 5
+[2025-11-18 04:34:42] Llamando a sp_finalizar_torneo_get_ganadores con ganador_id: 1
+[2025-11-18 04:34:42] Usuarios ganadores encontrados: [5]
+[2025-11-18 04:34:42] Asignando 5 puntos a los ganadores.
+[2025-11-18 04:34:42] Asignando puntos al usuario: 5
+[2025-11-18 04:34:42] Transacción completada (commit).
+[2025-11-18 04:34:42] Respuesta enviada: {"success":true,"ganador_id":1,"puntos_ganados":"5","usuarios_ganadores":[5],"goles_a":4,"goles_b":5}
+[2025-11-18 04:40:30] --- Nueva Solicitud ---
+[2025-11-18 04:40:30] Datos recibidos: {"id_torneo":35}
+[2025-11-18 04:40:30] Conexión a la base de datos exitosa.
+[2025-11-18 04:40:30] Transacción iniciada.
+[2025-11-18 04:40:30] Llamando a sp_finalizar_torneo_get_datos con id_torneo: 35
+[2025-11-18 04:40:30] Resultado de sp_finalizar_torneo_get_datos: {"equipo_a_id":4,"equipo_b_id":7,"puntos_premio":14}
+[2025-11-18 04:40:30] Llamando a sp_finalizar_torneo_update con ganador_id: 7, goles_a: 0, goles_b: 4
+[2025-11-18 04:40:30] Llamando a sp_finalizar_torneo_get_ganadores con ganador_id: 7
+[2025-11-18 04:40:30] Usuarios ganadores encontrados: [5]
+[2025-11-18 04:40:30] Asignando 14 puntos a los ganadores.
+[2025-11-18 04:40:30] Asignando puntos al usuario: 5
+[2025-11-18 04:40:30] Transacción completada (commit).
+[2025-11-18 04:40:30] Respuesta enviada: {"success":true,"ganador_id":7,"puntos_ganados":"14","usuarios_ganadores":[5],"goles_a":0,"goles_b":4}
+[2025-11-22 22:20:08] --- Nueva Solicitud ---
+[2025-11-22 22:20:08] Datos recibidos: {"id_torneo":36}
+[2025-11-22 22:20:08] Conexión a la base de datos exitosa.
+[2025-11-22 22:20:08] Transacción iniciada.
+[2025-11-22 22:20:08] Llamando a sp_finalizar_torneo_get_datos con id_torneo: 36
+[2025-11-22 22:20:08] Resultado de sp_finalizar_torneo_get_datos: {"equipo_a_id":5,"equipo_b_id":2,"puntos_premio":9}
+[2025-11-22 22:20:08] Llamando a sp_finalizar_torneo_update con ganador_id: 2, goles_a: 4, goles_b: 5
+[2025-11-22 22:20:08] Llamando a sp_finalizar_torneo_get_ganadores con ganador_id: 2
+[2025-11-22 22:20:09] Usuarios ganadores encontrados: []
+[2025-11-22 22:20:09] No hay usuarios ganadores para asignar puntos.
+[2025-11-22 22:20:09] Transacción completada (commit).
+[2025-11-22 22:20:09] Respuesta enviada: {"success":true,"ganador_id":2,"puntos_ganados":9,"usuarios_ganadores":[],"goles_a":4,"goles_b":5}
+[2025-11-22 22:20:53] --- Nueva Solicitud ---
+[2025-11-22 22:20:53] Datos recibidos: {"id_torneo":37}
+[2025-11-22 22:20:53] Conexión a la base de datos exitosa.
+[2025-11-22 22:20:53] Transacción iniciada.
+[2025-11-22 22:20:53] Llamando a sp_finalizar_torneo_get_datos con id_torneo: 37
+[2025-11-22 22:20:53] Resultado de sp_finalizar_torneo_get_datos: {"equipo_a_id":1,"equipo_b_id":3,"puntos_premio":13}
+[2025-11-22 22:20:53] Llamando a sp_finalizar_torneo_update con ganador_id: 1, goles_a: 5, goles_b: 4
+[2025-11-22 22:20:53] Llamando a sp_finalizar_torneo_get_ganadores con ganador_id: 1
+[2025-11-22 22:20:53] Usuarios ganadores encontrados: []
+[2025-11-22 22:20:53] No hay usuarios ganadores para asignar puntos.
+[2025-11-22 22:20:53] Transacción completada (commit).
+[2025-11-22 22:20:53] Respuesta enviada: {"success":true,"ganador_id":1,"puntos_ganados":13,"usuarios_ganadores":[],"goles_a":5,"goles_b":4}
+[2025-11-22 22:21:32] --- Nueva Solicitud ---
+[2025-11-22 22:21:32] Datos recibidos: {"id_torneo":38}
+[2025-11-22 22:21:32] Conexión a la base de datos exitosa.
+[2025-11-22 22:21:32] Transacción iniciada.
+[2025-11-22 22:21:32] Llamando a sp_finalizar_torneo_get_datos con id_torneo: 38
+[2025-11-22 22:21:32] Resultado de sp_finalizar_torneo_get_datos: {"equipo_a_id":4,"equipo_b_id":6,"puntos_premio":7}
+[2025-11-22 22:21:32] Llamando a sp_finalizar_torneo_update con ganador_id: 4, goles_a: 1, goles_b: 0
+[2025-11-22 22:21:32] Llamando a sp_finalizar_torneo_get_ganadores con ganador_id: 4
+[2025-11-22 22:21:32] Usuarios ganadores encontrados: [8]
+[2025-11-22 22:21:32] Asignando 7 puntos a los ganadores.
+[2025-11-22 22:21:32] Asignando puntos al usuario: 8
+[2025-11-22 22:21:32] Transacción completada (commit).
+[2025-11-22 22:21:32] Respuesta enviada: {"success":true,"ganador_id":4,"puntos_ganados":"7","usuarios_ganadores":[8],"goles_a":1,"goles_b":0}
+[2025-11-22 22:23:30] --- Nueva Solicitud ---
+[2025-11-22 22:23:30] Datos recibidos: {"id_torneo":39}
+[2025-11-22 22:23:30] Conexión a la base de datos exitosa.
+[2025-11-22 22:23:30] Transacción iniciada.
+[2025-11-22 22:23:30] Llamando a sp_finalizar_torneo_get_datos con id_torneo: 39
+[2025-11-22 22:23:30] Resultado de sp_finalizar_torneo_get_datos: {"equipo_a_id":2,"equipo_b_id":5,"puntos_premio":14}
+[2025-11-22 22:23:30] Llamando a sp_finalizar_torneo_update con ganador_id: 2, goles_a: 3, goles_b: 1
+[2025-11-22 22:23:30] Llamando a sp_finalizar_torneo_get_ganadores con ganador_id: 2
+[2025-11-22 22:23:30] Usuarios ganadores encontrados: [5]
+[2025-11-22 22:23:30] Asignando 14 puntos a los ganadores.
+[2025-11-22 22:23:30] Asignando puntos al usuario: 5
+[2025-11-22 22:23:30] Transacción completada (commit).
+[2025-11-22 22:23:30] Respuesta enviada: {"success":true,"ganador_id":2,"puntos_ganados":"14","usuarios_ganadores":[5],"goles_a":3,"goles_b":1}
+[2025-11-23 00:56:12] --- Nueva Solicitud ---
+[2025-11-23 00:56:12] Datos recibidos: {"id_torneo":"40"}
+[2025-11-23 00:56:12] Conexión a la base de datos exitosa.
+[2025-11-23 00:56:12] Transacción iniciada.
+[2025-11-23 00:56:12] Llamando a sp_finalizar_torneo_get_datos con id_torneo: 40
+[2025-11-23 00:56:12] Resultado de sp_finalizar_torneo_get_datos: {"equipo_a_id":7,"equipo_b_id":1,"puntos_premio":14}
+[2025-11-23 00:56:12] Llamando a sp_finalizar_torneo_update con ganador_id: 7, goles_a: 1, goles_b: 0
+[2025-11-23 00:56:12] Llamando a sp_finalizar_torneo_get_ganadores con ganador_id: 7
+[2025-11-23 00:56:12] Usuarios ganadores encontrados: [8,5]
+[2025-11-23 00:56:12] Asignando 14 puntos a los ganadores.
+[2025-11-23 00:56:12] Asignando puntos al usuario: 8
+[2025-11-23 00:56:12] Asignando puntos al usuario: 5
+[2025-11-23 00:56:12] Transacción completada (commit).
+[2025-11-23 00:56:12] Respuesta enviada: {"success":true,"ganador_id":7,"puntos_ganados":"14","usuarios_ganadores":[8,5],"goles_a":1,"goles_b":0}
